@@ -15,16 +15,19 @@ package lab01;
 public abstract class Evento {
     private String nome;
     private Local local;
+    private String data;
     private double precoIngresso;
+
 
     /**
      * Construtor da classe Evento
      * @param nome o nome do Evento
      * @param local o local associado ao Evento
      */
-    public Evento(String nome, Local local, double precoIngresso){
+    public Evento(String nome, Local local, String data, double precoIngresso){
         this.nome = nome;
         this.local = local;
+        this.data = data;
         this.precoIngresso = precoIngresso;
     }
 
@@ -52,11 +55,29 @@ public abstract class Evento {
         return precoIngresso;
     }
 
+    public Local getLocal(){
+        return local;
+    }
+
+    public String getData(){
+        return data;
+    }
+
     /**
      * Altera o precoIngresso do Evento para `precoIngresso` 
      * @param precoIngresso o novo precoIngresso do Evento
      */
     public void setPrecoIngresso(double precoIngresso){
         this.precoIngresso = precoIngresso;
+    }
+
+    protected void exibirDetalhes(){
+        String saida = """
+                Nome: %s
+                Local: %s
+                Data: %s
+                Preço Inteira: %dR$
+                """;
+        System.out.println(String.format(saida, nome, local, data, precoIngresso));
     }
 }
