@@ -1,6 +1,6 @@
 package lab01;
 
-public class EventoTeatro extends Evento {
+public class EventoTeatro extends Evento{
     String diretor;
 
     public EventoTeatro(String nome, Local local, double precoIngresso, String data, String diretor){

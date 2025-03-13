@@ -9,7 +9,7 @@ public class EventoShow extends Evento {
         this.artista = artista;
     }
     @Override
-    protected void exibirDetalhes() {
+    public void exibirDetalhes() {
         String saida = """
                 Nome: %s\n
                 Local: %s\n
