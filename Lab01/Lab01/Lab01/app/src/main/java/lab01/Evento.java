@@ -91,8 +91,8 @@ public abstract class Evento {
         ingressosVendidos.add(ingresso);
     }
 
-    public int calcularFaturamento(){
-        int faturamento = 0;
+    public double calcularFaturamento(){
+        double faturamento = 0;
         for(Ingresso ingresso:ingressosVendidos){
             faturamento += ingresso.getPreco();
         }

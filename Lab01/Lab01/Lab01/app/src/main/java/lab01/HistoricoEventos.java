@@ -1,5 +1,16 @@
 package lab01;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HistoricoEventos {
-    //IMPLEMENTAR
+    List<Evento> eventos;
+    
+    public HistoricoEventos(){
+        this.eventos = new ArrayList<>();
+    }
+
+    public void adicionarEvento(Evento evento){
+        eventos.add(evento);
+    }
 }
