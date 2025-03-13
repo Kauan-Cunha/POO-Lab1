@@ -15,6 +15,7 @@ package lab01;
 public abstract class Ingresso {
 
     private Evento evento;
+    private Usuario usuario;
 
     /**
      * Construtor da classe Ingresso
@@ -24,10 +25,21 @@ public abstract class Ingresso {
         this.evento = evento;
     }
 
+    public Evento getEvento(){
+        return evento;
+    }
+
     /**
      * Retorna o preço do Ingresso
      * @return o preço do Ingresso
      */
     public abstract double getPreco();
     
+    public Usuario getUsuario(){
+        return usuario;
+    }
+    
+    public void setUsuario(Usuario usuario){
+        this.usuario = usuario;
+    }
 }

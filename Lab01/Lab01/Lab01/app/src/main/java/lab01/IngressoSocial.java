@@ -1,8 +1,11 @@
 package lab01;
 
 public class IngressoSocial extends Ingresso{
-    @Override
+
+    public IngressoSocial(Evento evento){
+        super(evento);
+    }
     public double getPreco() {
-        return (evento.getPrecoIngresso())/3;
+        return (getEvento().getPrecoIngresso())/3;
     }
 }

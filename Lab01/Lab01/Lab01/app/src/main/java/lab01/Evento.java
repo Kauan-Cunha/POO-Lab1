@@ -6,6 +6,9 @@
 
 package lab01;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Contém a estrutura de implementação de um Evento.
  * 
@@ -17,6 +20,7 @@ public abstract class Evento {
     private Local local;
     private String data;
     private double precoIngresso;
+    private List<Ingresso> ingressosVendidos;
 
 
     /**
@@ -29,6 +33,7 @@ public abstract class Evento {
         this.local = local;
         this.data = data;
         this.precoIngresso = precoIngresso;
+        List<Ingresso> ingressosVendidos = new ArrayList<Ingresso>();
     }
 
     /**
@@ -71,7 +76,7 @@ public abstract class Evento {
         this.precoIngresso = precoIngresso;
     }
 
-    protected void exibirDetalhes(){
+    public void exibirDetalhes(){
         String saida = """
                 Nome: %s
                 Local: %s
@@ -80,4 +85,18 @@ public abstract class Evento {
                 """;
         System.out.println(String.format(saida, nome, local, data, precoIngresso));
     }
-}
+
+    public void adicionarIngresso(Ingresso ingresso, Usuario usuario){
+        ingresso.setUsuario(usuario);
+        ingressosVendidos.add(ingresso);
+    }
+
+    public int calcularFaturamento(){
+        int faturamento = 0;
+        for(Ingresso ingresso:ingressosVendidos){
+            faturamento += ingresso.getPreco();
+        }
+        
+        return faturamento;
+    }
+}   

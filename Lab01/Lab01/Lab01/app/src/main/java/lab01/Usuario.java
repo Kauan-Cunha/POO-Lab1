@@ -41,4 +41,8 @@ public class Usuario {
     public void setNome(String nome){
         this.nome = nome;
     }
+
+    public String getEmail(){
+        return email;
+    }
 }
