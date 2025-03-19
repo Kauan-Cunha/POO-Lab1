@@ -7,4 +7,15 @@ public class EventoTeatro extends Evento{
         super(nome, local, data, precoIngresso);
         this.diretor = diretor;
     }
+    @Override
+    public void exibirDetalhes() {
+        String saida = """
+                Nome: %s\n
+                Local: %s\n
+                Diretor: %s\n
+                Data: %s \n
+                Preço Inteira: %dR$\n
+                """;
+        System.out.println(String.format(saida, getNome(), getLocal().getNome(), diretor, getData(), getPrecoIngresso()));
+    }
 }

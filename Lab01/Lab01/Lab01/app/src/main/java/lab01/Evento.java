@@ -85,7 +85,7 @@ public abstract class Evento {
                 """;
         System.out.println(String.format(saida, nome, local, data, precoIngresso));
     }
-
+ 
     public void adicionarIngresso(Ingresso ingresso, Usuario usuario){
         ingresso.setUsuario(usuario);
         ingressosVendidos.add(ingresso);
@@ -94,7 +94,7 @@ public abstract class Evento {
     public double calcularFaturamento(){
         double faturamento = 0;
         for(Ingresso ingresso:ingressosVendidos){
-            faturamento += ingresso.getPreco();
+            faturamento +=ingresso.getPreco();
         }
         
         return faturamento;
