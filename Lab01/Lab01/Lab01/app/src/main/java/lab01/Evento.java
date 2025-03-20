@@ -20,6 +20,7 @@ public abstract class Evento {
     private Local local;
     private String data;
     private double precoIngresso;
+    private int numIngressos;
     private List<Ingresso> ingressosVendidos;
 
 
@@ -33,6 +34,7 @@ public abstract class Evento {
         this.local = local;
         this.data = data;
         this.precoIngresso = precoIngresso;
+        numIngressos = 0;
         List<Ingresso> ingressosVendidos = new ArrayList<Ingresso>();
     }
 
@@ -40,6 +42,10 @@ public abstract class Evento {
      * Retorna o nome do Evento
      * @return o nome do Evento
      */
+
+    public int getNumIgressos(){
+        return numIngressos;
+    }
     public String getNome(){
         return nome;
     }
@@ -89,6 +95,7 @@ public abstract class Evento {
     public void adicionarIngresso(Ingresso ingresso, Usuario usuario){
         ingresso.setUsuario(usuario);
         ingressosVendidos.add(ingresso);
+        numIngressos += 1;
     }
 
     public double calcularFaturamento(){

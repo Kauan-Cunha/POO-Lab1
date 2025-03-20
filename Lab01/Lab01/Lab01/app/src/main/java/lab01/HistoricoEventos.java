@@ -13,4 +13,11 @@ public class HistoricoEventos {
     public void adicionarEvento(Evento evento){
         eventos.add(evento);
     }
+    
+    public void exibir(){
+        System.out.println("Eventos Cadastrados: ");
+        for(Evento evento : eventos){
+            System.out.println(evento.getNome()+ " (" + evento.getNumIgressos() + ");" );
+        }
+    }
 }
